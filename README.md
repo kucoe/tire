@@ -12,7 +12,7 @@ For browsers and node.js.
 
 ## Usage
 
-* `tire(fn, thisArg , errorCallback)(fn)(fn);`
+`tire(fn, thisArg , errorCallback)(fn)(fn);`
 * **fn** - A first and next functions to be run.
 * **thisArg** - An object that will be used for this [optional].
 * **errorCallback** - An callback to be run on error [optional].

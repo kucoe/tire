@@ -1,6 +1,6 @@
 {
     "name": "tire",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Simple function chain module ",
     "author": "Wolf Bas <becevka@kucoe.net>",
     "main" : "./index.s",
@@ -10,7 +10,7 @@
     },
     "bugs": "https://github.com/kucoe/tire/issues",
     "engines": {
-        "node": "node >= 0.10.x"
+        "node": "node >= 0.8.x"
     },
     "dependencies": {
     },
