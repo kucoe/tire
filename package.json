@@ -1,0 +1,31 @@
+{
+    "name": "tire",
+    "version": "0.1.0",
+    "description": "Simple function chain module ",
+    "author": "Wolf Bas <becevka@kucoe.net>",
+    "main" : "./index.s",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/kucoe/tire.git"
+    },
+    "bugs": "https://github.com/kucoe/tire/issues",
+    "engines": {
+        "node": "node >= 0.10.x"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+    },
+    "scripts": {
+        "test": "node .tests.js"
+    },
+    "keywords": ["async", "chain", "function", "flow", "control"],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://kucoe.mit-license.org/"
+        }
+    ]
+}
