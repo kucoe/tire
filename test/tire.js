@@ -127,4 +127,45 @@ describe('tire', function () {
             done();
         });
     });
+    it('should support internal calls', function (done) {
+        tire(function (next) {
+            var n = next;
+            call_order.push(1);
+            tire(function (next) {
+                call_order.push(3);
+                next();
+            })(function (next) {
+                call_order.push(5);
+                var i = next;
+                tire(function (next) {
+                    call_order.push(1);
+                    next();
+                })(function (next) {
+                    call_order.push(4);
+                    next();
+                })(function (next) {
+                    call_order.push(6);
+                    next();
+                })(function () {
+                    call_order.push(8);
+                    i();
+                });
+            })(function (next) {
+                call_order.push(7);
+                next();
+            })(function () {
+                call_order.push(9);
+                n();
+            });
+        })(function (next) {
+            call_order.push(2);
+            next();
+        })(function (next) {
+            call_order.push(4);
+            next();
+        })(function () {
+            call_order.should.eql([1, 3, 5, 1, 4, 6, 8, 7, 9, 2, 4], 'calls');
+            done();
+        });
+    });
 });
